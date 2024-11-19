@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="ShopLapTop.Index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="Style/Index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%-- Header--%>
+        <div class="header">
+            <div class="top-bar">
+                <div class="menu-left">
+                    <div class="logo-container">
+                        <asp:HyperLink ID="HomeLink" runat="server" NavigateUrl="~/SubPage.aspx">
+                            <asp:Image ID="LogoImage" runat="server" ImageUrl="~/Style/Images/pngegg.png" AlternateText="Shop LapTop" CssClass="logo" />
+                        </asp:HyperLink>
+                    </div>
+                    <div class="search-container">
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="search-input" Placeholder="Tìm kiếm..."></asp:TextBox>
+                        <asp:Button ID="btnSearch" CssClass="search-button" runat="server" Text="Tìm kiếm" OnClick="btnSearch_Click" />
+                    </div>
+                </div>
+                <div class="menu-right">
+                    <div class="cart-container">
+                        <div class="menulogin-left">
+                            <asp:HyperLink ID="Login1" runat="server" NavigateUrl="~/Login/Logins.aspx" class="cart">
+                                <asp:Image ID="Login" runat="server" ImageUrl="~/Style/Images/User.png" AlternateText="Login" />
+                            </asp:HyperLink>
+
+                            <asp:Literal ID="lblTaiKhoan" runat="server"></asp:Literal>
+                            &nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnLogOut" runat="server" Text="Đăng xuất" CssClass="btn-logout" OnClick="btnLogOut_Click" />
+
+                        </div>
+                        <div> 
+                            <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Views/Orders/Carts.aspx" CssClass="cart" runat="server">
+                               <asp:Image ID="car" runat="server" ImageUrl="~/Style/Images/carshopping.png" AlternateText="" Width="40px" Height="30px" />
+                            </asp:HyperLink>
+                        </div>
+                        <div>
+                            <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Views/Orders/Carts.aspx" CssClass="cart" runat="server">
+                                <asp:Image ID="CartImage" runat="server" ImageUrl="~/Style/Images/png-clipart-shopping-cart-shopping-centre-icon-shopping-cart-text-retail-thumbnail.png" AlternateText="Giỏ Hàng" />
+                            </asp:HyperLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ThuongHieu">
+                <asp:Repeater ID="RepeaterThuongHieu" runat="server">
+                    <ItemTemplate>
+                        <div class="ThuongHieu">
+
+                            <p>
+                                <asp:HyperLink ID="ThuongHieu" Color="Black" CssClass="product-link" runat="server" Text='<%# Eval("BrandName") %>' NavigateUrl='<%# "~/Views/Pages/ProductCategory.aspx?idc=" + Eval("BrandID") %>'></asp:HyperLink>
+                            </p>
+
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-container">
+                <h3>Liên Lạc</h3>
+                <br />
+                <p>Địa chỉ: 783 Phạm Hữu Lầu, Phường 6, TP.Cao Lãnh, Đồng Tháp</p>
+                <br />
+                <p>Điện thoại: 0123456789</p>
+                <br />
+                <p>Email: Shop@gmail.com</p>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>
