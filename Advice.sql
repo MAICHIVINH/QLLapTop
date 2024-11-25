@@ -1,22 +1,19 @@
 ﻿CREATE DATABASE Advice;
+
 USE Advice;
 
--- Table NhomSanPham (ProductCategory)
 CREATE TABLE ProductCategory (
     CategoryID INT IDENTITY PRIMARY KEY ,
     CategoryName NVARCHAR(50),
     Status BIT
 );
 
-
--- Table ThuongHieu (Brand)
 CREATE TABLE Brand (
     BrandID INT IDENTITY PRIMARY KEY,
     BrandName NVARCHAR(50),
     Status BIT
 );
 
--- Table SanPham (Product)
 CREATE TABLE Product (
     ProductID INT IDENTITY PRIMARY KEY,
     ProductName NVARCHAR(100),
@@ -28,13 +25,13 @@ CREATE TABLE Product (
     CategoryID INT,
     BrandID INT,
     Discount INT,
+	Evaluate float,
+	TotalRatings INT DEFAULT 0 NOT NULL,
+	SumRatings INT DEFAULT 0 NOT NULL,
     FOREIGN KEY (CategoryID) REFERENCES ProductCategory(CategoryID),
     FOREIGN KEY (BrandID) REFERENCES Brand(BrandID)
 );
 
-Select * from Product
-Select * from Image
--- Table HinhAnh (Image)
 CREATE TABLE Image (
     ImageID INT IDENTITY PRIMARY KEY,
     ImageName NVARCHAR(255),
@@ -42,41 +39,37 @@ CREATE TABLE Image (
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
 );
 
--- Table TaiKhoan (Account)
+select * from OrderDetail
+
 CREATE TABLE Account (
     AccountID INT IDENTITY PRIMARY KEY,
     FullName NVARCHAR(100),
     Email NVARCHAR(100),
     Password NVARCHAR(50),
     Address NVARCHAR(255),
-    PhoneNumber NVARCHAR(20),
     Gender BIT,
 	Points int,
-	City nvarchar(100)
-
+	Status bit,
+	City nvarchar(100),
+	PASSWORD_HASH nvarchar(256),
+	PASSWORD_SALT NVARCHAR(50)
 );
 
-
-
--- Table PhanQuyenTaiKhoan (AccountRole)
-CREATE TABLE AccountRole (
+CREATE TABLE AccountCustomerRole (
     RoleID INT PRIMARY KEY,
     RoleName NVARCHAR(50)
 );
 
-select * from Account
--- Table QuyenTaiKhoan (AccountPermission)
-CREATE TABLE AccountPermission (
+CREATE TABLE AccountCustomerPermission (
     AccountID INT,
     RoleID INT,
     PRIMARY KEY (AccountID, RoleID),
     FOREIGN KEY (AccountID) REFERENCES Account(AccountID),
-    FOREIGN KEY (RoleID) REFERENCES AccountRole(RoleID)
+    FOREIGN KEY (RoleID) REFERENCES AccountCustomerRole(RoleID)
 );
 
+Select * from Account
 
-
--- Table DonHang (Order)
 CREATE TABLE Orders (
     OrderID NVARCHAR(50) PRIMARY KEY,
     FullName NVARCHAR(100),
@@ -89,36 +82,16 @@ CREATE TABLE Orders (
 	Note NTEXT,
 	City nvarchar(100),
 	AccountID int null,
-	FOREIGN KEY (Status) REFERENCES StatusOrder(status_id)
+	emloyee_id int,
+	FOREIGN KEY (Status) REFERENCES StatusOrder(status_id),
+	FOREIGN KEY (emloyee_id) REFERENCES Emloyees(emloyee_id)
 );
 
-
-create table StatusOrder
-(
+create table StatusOrder(
 	status_id int primary key,
 	status_name nvarchar(100),
-)
+);
 
-
-Insert Into StatusOrder (status_id, status_name) values
-(1, N'Chờ xác nhận')
-Insert Into StatusOrder (status_id, status_name) values
-(2, N'Đã xác nhận')
-Insert Into StatusOrder (status_id, status_name) values
-(3, N'Đang chuẩn bị hàng')
-Insert Into StatusOrder (status_id, status_name) values
-(4, N'Hàng đang được giao')
-Insert Into StatusOrder (status_id, status_name) values
-(5, N'Hàng đã giao đến bạn')
-
-Select * from StatusOrder
-
-Select * from Orders
-
-
-Select * from OrderDetail
-
--- Table ChiTietDonHang (OrderDetail)
 CREATE TABLE OrderDetail (
     OrderDetailID INT IDENTITY PRIMARY KEY,
     Quantity INT,
@@ -129,9 +102,44 @@ CREATE TABLE OrderDetail (
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
 );
 
--- Table LichSuDonHang (OrderHistory)
-CREATE TABLE OrderHistory (
-    HistoryID INT PRIMARY KEY,
+Create Table Emloyees(
+	emloyee_id int identity primary key,
+	emloyee_fullname nvarchar(100) not null,
+	emloyee_email nvarchar(100) not null,
+	emloyee_phone nvarchar(20) not null,
+	PASSWORD_HASH nvarchar(256) not null,
+	PASSWORD_SALT NVARCHAR(50) NOT NULL,
+	emloyee_address nvarchar(1000) not null,
+	emloyee_status bit,
+	emloyee_date date
+);
+
+Create table AdminAdvice(
+	ID_ADMIN INT IDENTITY PRIMARY KEY,
+	FULLNAME NVARCHAR(100) NOT NULL,
+    USERNAME NVARCHAR(100) UNIQUE NOT NULL,
+    PASSWORD NVARCHAR(256) NOT NULL,
+	EMAIL NVARCHAR(100),
+	PHONE NVARCHAR(20),
+);
+
+CREATE TABLE AccountEmloyeeRole (
+    RoleID INT PRIMARY KEY,
+    RoleName NVARCHAR(50)
+);
+
+CREATE TABLE AccountEmloyeePermission (
+    EmloyeeID INT,
+    RoleID INT,
+    PRIMARY KEY (EmloyeeID, RoleID),
+    FOREIGN KEY (EmloyeeID) REFERENCES Emloyees(emloyee_id),
+    FOREIGN KEY (RoleID) REFERENCES AccountEmloyeeRole(RoleID)
+);
+
+
+
+CREATE TABLE OrderHistoriyProduct (
+    HistoryID INT identity PRIMARY KEY,
     ProductID INT,
     Quantity INT,
     TotalAmount DECIMAL(18, 2),
@@ -139,11 +147,34 @@ CREATE TABLE OrderHistory (
     OrderID NVARCHAR(50),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
     FOREIGN KEY (AccountID) REFERENCES Account(AccountID),
-    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
+select * from OrderHistoriyProduct
+
+
 --1: nam --0: nữ
 Insert Into Account(FullName, Email, Password, Address, PhoneNumber, Gender) Values (N'Mai Chí Vĩnh', N'vinh123@gmail.com', N'123', N'Ba Tri', N'0394529044', 1)
 Insert Into Account(FullName, Email, Password, Address, PhoneNumber, Gender) Values (N'Lê Phước Bình', N'binh123@gmail.com', N'123', N'Lấp Vò', N'0839350984', 1)
+
+Insert Into StatusOrder (status_id, status_name) values(1, N'Chờ xác nhận')
+Insert Into StatusOrder (status_id, status_name) values(2, N'Đã xác nhận')
+Insert Into StatusOrder (status_id, status_name) values(3, N'Đang chuẩn bị hàng')
+Insert Into StatusOrder (status_id, status_name) values(4, N'Hàng đang được giao')
+Insert Into StatusOrder (status_id, status_name) values(5, N'Hàng đã giao đến bạn')
+
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(3, N'Thêm sản phẩm')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(4, N'Sửa sản phẩm')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(5, N'Xóa sản phẩm')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(6, N'Thêm Thương Hiệu')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(7, N'Sửa Thương Hiệu')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(8, N'Xóa Thương Hiệu')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(9, N'Thêm Loại Sản Phẩm')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(10, N'Sửa Loại Sản Phẩm')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(11, N'Xóa Loại Sản Phẩm')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(12, N'Sửa Đơn Hàng')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(13, N'Xóa Đơn Hàng')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(14, N'Thêm Tài Khoản Nhân Viên')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(15, N'Sửa Tài Khoản Nhân Viên')
+Insert into AccountEmloyeeRole(RoleID, RoleName) values(15, N'Xóa Tài Khoản Nhân Viên')
 
 Insert Into ProductCategory(CategoryName, Status) Values (N'Mỏng nhẹ', 1)--1
 Insert Into ProductCategory(CategoryName, Status) Values (N'Văn phòng', 1)--2
@@ -233,6 +264,14 @@ N'Laptop Lenovo LOQ 15IAX9 (83GS001RVN) - Chính hãng là dòng máy gaming đ�
 Insert Into Product(ProductName, Price, Image, Details, Description, StockQuantity, CategoryID, BrandID, Discount)
 Values(N'Lenovo ThinkBook 16 G6 IRL 21KH00Q0VN', 20490000, N'Lenovo ThinkBook 16 G6 IRL 21KH00Q0VN.png', N'M.HÌNH 16", IPS' + CHAR(13) + CHAR(10) + N'CPU Intel Core i5, 13420H' + CHAR(13) + CHAR(10) + N'RAM DDR5, 512GB SSD' + CHAR(13) + CHAR(10) + N'PIN 71Wh', 
 N'Lenovo ThinkBook 14 Gen 6 (14" Intel) có cấu hình mạnh mẽ khi được trang bị bộ vi xử lý Intel® Core™ thế hệ 13 dòng H chuyên về hiệu năng. Con chip Intel Core i5 13420H, với 8 lõi 12 luồng và tốc độ tối đa 4.60 GHz thường chỉ thấy trên các laptop chơi game, mang lại hiệu suất vượt trội, giúp nâng cao năng suất làm việc. Lenovo ThinkBook 14 G6 IRL xử lý mọi việc một cách nhanh chóng và hiệu quả, tiết kiệm thời gian cho bạn.', 20, 2, 5, 5)
+Insert Into Product(ProductName, Price, Image, Details, Description, StockQuantity, CategoryID, BrandID, Discount, Evaluate, TotalRatings, SumRatings)
+Values(N'HP Spectre X360 14-eu0050TU', 56990000, N'HP Spectre X360 14-eu0050TU.jpg', N'M.HÌNH 14" ,OLED' + CHAR(13) + CHAR(10) + N'CPU Intel, Core Ultra 7' + CHAR(13) + CHAR(10) + N'RAM LPDDR5, 32 GB' + CHAR(13) + CHAR(10) + N'PIN 75 WHrs, 65 W', 
+N'Sở hữu màn hình OLED cảm ứng tràn viền cùng bộ vi xử lý mạnh mẽ cho các tác vụ văn phòng, Zenbook 14 OLED UM3402 là lựa chọn tuyệt vời cho những ai đang kiếm tìm một mẫu laptop vừa sang trọng, vừa cơ động, mang lại trải nghiệm tốt trong mọi khía cạnh, từ năng lực hiển thị, sức mạnh hiệu năng, chất lượng âm thanh và pin thật ấn tượng.
+', 25, 5, 6, 9, 0, 0, 0)
+Insert Into Product(ProductName, Price, Image, Details, Description, StockQuantity, CategoryID, BrandID, Discount, Evaluate, TotalRatings, SumRatings)
+Values(N'Asus Zenbook 14 OLED UM3402YA-KM826W', 23990000, N'Asus Zenbook 14 OLED UM3402YA-KM826W.jpg', N'M.HÌNH 14" ,OLED' + CHAR(13) + CHAR(10) + N'CPU AMD, Ryzen 5' + CHAR(13) + CHAR(10) + N'RAM LPDDR4X, 16 GB' + CHAR(13) + CHAR(10) + N'PIN 4 Cell, 65 W', 
+N'Laptop HP Spectre X360 14 eu0050TU Ultra 7 155H tự hào là một ultrabook cao cấp với thiết kế thời thượng và sang trọng. Máy mang lại trải nghiệm sử dụng linh hoạt và đẳng cấp với hiệu suất mạnh mẽ nhờ con chip Intel Core Ultra thế hệ mới, cùng với đó là sự hỗ trợ của AI chuyên nghiệp. Thiết bị đáp ứng hoàn hảo nhu cầu làm việc đa nhiệm và giải trí đa phương tiện của người dùng.'
+, 20, 2, 2, 15, 0, 0, 0)
 
 ---ProductID = 1 
 Insert Into Image(ImageName, ProductID) Values(N'1 Apple MacBook Air 15 inch M3.jpg',1)
@@ -359,19 +398,13 @@ Insert Into Image(ImageName, ProductID) Values(N'1 Lenovo ThinkBook 16 G6 IRL 21
 Insert Into Image(ImageName, ProductID) Values(N'2 Lenovo ThinkBook 16 G6 IRL 21KH00Q0VN.png',25)
 Insert Into Image(ImageName, ProductID) Values(N'3 Lenovo ThinkBook 16 G6 IRL 21KH00Q0VN.png',25)
 Insert Into Image(ImageName, ProductID) Values(N'4 Lenovo ThinkBook 16 G6 IRL 21KH00Q0VN.png',25)
----ProductID = 26
-
----ProductID = 27
-
----ProductID = 28
-
----ProductID = 29
-
----ProductID = 30
-
-
-Select * from ProductCategory
-Select * from Brand
-Select * from Product
-Select * from Image
-Select * from Account
+---ProductID = 26 hiện tại 30
+Insert Into Image(ImageName, ProductID) Values(N'1 HP Spectre X360 14-eu0050TU.jpg',30)
+Insert Into Image(ImageName, ProductID) Values(N'2 HP Spectre X360 14-eu0050TU.jpg',30)
+Insert Into Image(ImageName, ProductID) Values(N'3 HP Spectre X360 14-eu0050TU.jpg',30)
+Insert Into Image(ImageName, ProductID) Values(N'4 HP Spectre X360 14-eu0050TU.jpg',30)
+---ProductID = 27 hiện tại 31
+Insert Into Image(ImageName, ProductID) Values(N'1 Asus Zenbook 14 OLED UM3402YA-KM826W.jpg',31)
+Insert Into Image(ImageName, ProductID) Values(N'2 Asus Zenbook 14 OLED UM3402YA-KM826W.jpg',31)
+Insert Into Image(ImageName, ProductID) Values(N'3 Asus Zenbook 14 OLED UM3402YA-KM826W.jpg',31)
+Insert Into Image(ImageName, ProductID) Values(N'4 Asus Zenbook 14 OLED UM3402YA-KM826W.jpg',31)

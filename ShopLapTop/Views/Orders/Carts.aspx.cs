@@ -124,6 +124,13 @@ namespace ShopLapTop.Views.Orders
                     OrderID = orderid
                 };
                 data.OrderDetails.InsertOnSubmit(orderDetails);
+            var productQuantity = data.Products.SingleOrDefault(p => p.ProductID == productId);
+            if(quantity > productQuantity.StockQuantity)
+            {
+                lblError.Text = "Số lưởng sản phẩm trong kho không đủ cho bạn hãy giảm số lượng mua giúp tôi";
+                return;
+            }
+            productQuantity.StockQuantity -= quantity;
             data.SubmitChanges();
         }
         private string RandomString(int length)
@@ -198,7 +205,7 @@ namespace ShopLapTop.Views.Orders
                 // Gọi hàm BuyProduct với các sản phẩm đã chọn
                 foreach (var item in selectedItems)
                 {
-                    totalPrice += item.Price;
+                    totalPrice += item.TotalPrice;
                 }
                 string fullname = txtFullname.Text;
                 string phone = txtPhone.Text;
@@ -221,6 +228,8 @@ namespace ShopLapTop.Views.Orders
                     totalPrice += item.Price;
                     AddOrderDetails(item.ProductId, item.Quantity, item.TotalPrice, orderid); // Hoặc gọi các hàm tương tự
                 }
+                Session["idOrder"] = orderid;
+                Response.Redirect("OrderStatus.aspx");
             }
             else
             {

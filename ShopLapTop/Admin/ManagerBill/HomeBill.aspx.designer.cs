@@ -42,13 +42,13 @@ namespace ShopLapTop.Admin.ManagerBill
         protected global::System.Web.UI.WebControls.Button btnLoad;
 
         /// <summary>
-        /// btnAddCategory control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddCategory;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// rptOrderList control.

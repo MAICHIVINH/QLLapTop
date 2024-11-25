@@ -8,81 +8,76 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="position: fixed;">
         <div class="container">
-            <div class="illustration-section">
-                <asp:Image ID="IllustrationImage" runat="server" ImageUrl="~/Image/logoVill.png" AlternateText="Illustration" />
+            <div class="images">
+                <asp:Image ID="img" runat="server" ImageUrl="../Style/Images/resignter.png" AlternateText="Illustration" />
             </div>
-            <div class="form-section">
-                <h2>Sign up</h2>
+            <div class="form">
+                <h1>Tạo tài khoản mới</h1>
                 <%--                Tên Người Dùng--%>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="name"><i class="fas fa-user"></i></label>
-                        <asp:TextBox ID="txtYourName" runat="server" CssClass="input-field" placeholder="Your Name" />
+                <div class="group">
+                    <div class="wrapper">
+                        <asp:TextBox ID="txtYourName" runat="server" CssClass="input-field" placeholder="Nhập tên" />
                     </div>
                 </div>
                 <%--                Email đăng nhập --%>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="email"><i class="fas fa-envelope"></i></label>
-                        <asp:TextBox ID="txtEmail" runat="server" CssClass="input-field" TextMode="Email" placeholder="Your Email" />
+                <div class="group">
+                    <div class="wrapper">
+                        <asp:TextBox ID="txtEmail" runat="server" CssClass="input-field" TextMode="Email" placeholder="Nhập email" />
                     </div>
                 </div>
                 <%--                    Số Điện thoại--%>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="email"><i class="fa-solid fa-phone"></i></label>
+                <div class="group">
+                    <div class="wrapper">
                         <asp:TextBox ID="txtPhone" runat="server" CssClass="input-field" TextMode="Phone" placeholder="Số Điện Thoại" />
                     </div>
                 </div>
-                 <%--                Gioi tinh--%>
-                <div class="input-group">
-                    <asp:Label ID="lblGender" runat="server" Text="Giới tính:"></asp:Label>
-                        <asp:checkbox ID="chkHis" runat="server" CssClass="input-field" text="Nam" />
-                        <asp:checkbox ID="chkHer" runat="server" CssClass="input-field" text="Nữ" />
+                <%--                Gioi tinh--%>
+                <div class="group">
+                    <%--<asp:Label ID="lblGender" runat="server" Text="Giới tính:"></asp:Label>--%>
+                    <asp:CheckBox ID="chkHis" runat="server" CssClass="input-field" Text="Nam" />
+                    <asp:CheckBox ID="chkHer" runat="server" CssClass="input-field" Text="Nữ" />
                 </div>
                 <%--                Địa chỉ nhà--%>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="email"><i class="fa-solid fa-house"></i></label>
-                        <asp:TextBox ID="txtAddress" runat="server" CssClass="input-field" placeholder="Địa chỉ nhà" />
+                <div class="group">
+                    <div class="wrapper">
+                        <asp:TextBox ID="txtAddress" runat="server" CssClass="input-field" placeholder="Nhập địa chỉ" />
                     </div>
                 </div>
                 <%--                Thành phố--%>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="email"><i class="fa-solid fa-city"></i></label>
-                        <asp:TextBox ID="txtCity" runat="server" CssClass="input-field" placeholder="Tỉnh/Thành Phố Bạn Sinh Sống" />
+                <div class="group">
+                    <div class="wrapper">
+                        <asp:TextBox ID="txtCity" runat="server" CssClass="input-field" placeholder="Tỉnh/Thành Phố bạn sinh sống" />
                     </div>
                 </div>
                 <%--                Mặt Khẩu đăng nhập--%>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="password"><i class="fas fa-lock"></i></label>
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="input-field" TextMode="Password" placeholder="Password" />
+                <div class="group">
+                    <div class="wrapper">
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="input-field" TextMode="Password" placeholder="Nhập mật khẩu" />
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <label for="confirm-password"><i class="fas fa-key"></i></label>
-                        <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="input-field" TextMode="Password" placeholder="Repeat your password" />
+                <div class="group">
+                    <div class="wrapper">
+                        <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="input-field" TextMode="Password" placeholder="Nhập lại mật khẩu" />
                     </div>
                 </div>
 
                 <div class="terms">
                     <asp:CheckBox ID="ChkTerms" runat="server" />
-                    <label for="terms">I agree all statements in <a href="#">Terms of service</a></label>
+                    <asp:Label ID="lblClause" runat="server" Text="Tôi đồng ý tất cả các tuyên bố trong"></asp:Label>
+                        <a href="#" style="text-decoration: none; font-style: italic;">Điều khoản dịch vụ</a>
                 </div>
 
-                <asp:Button ID="btnRegister" runat="server" Text="REGISTER" CssClass="register-btn" OnClick="btnRegister_Click" />
+                <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btnregister" OnClick="btnRegister_Click" />
 
                 <asp:Literal ID="lblError" runat="server"></asp:Literal>
 
-                <p>Have already an account? <a href="Login.aspx">Login here</a></p>
+                <asp:Label ID="lbl" runat="server" Text="Bạn đã có tài khoản?"></asp:Label>
+                    <a href="Login.aspx" style="text-decoration: none;">Đăng nhập tại đây</a>
             </div>
-            </div>
+        </div>
     </form>
 </body>
 </html>

@@ -14,6 +14,10 @@
             border: none;
             background-color: white;
         }
+        .Home {
+            text-decoration: none;
+            color: #ff00dc
+        }
     </style>
 </head>
 <body>
@@ -22,22 +26,25 @@
             <div class="left">
                 <div class="sidebar">
                     <div style="position: fixed">
-                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Admin/Manager2.aspx" runat="server"><h2>Avdice Manager</h2></asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" CssClass="Home" NavigateUrl="~/Admin/Manager2.aspx" runat="server"><h2>Avdice Manager</h2></asp:HyperLink>
                         <ul>
                             <li>
-                                <asp:HyperLink ID="hlProduct" NavigateUrl="~/Admin/ManagerProduct/HomeProduct.aspx" runat="server">Sản phẩm</asp:HyperLink>
+                                <asp:HyperLink ID="hlProduct" Visible="false" NavigateUrl="~/Admin/ManagerProduct/HomeProduct.aspx" runat="server">Sản phẩm</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:HyperLink ID="hlBrand" NavigateUrl="~/Admin/ManagerBrand/HomeBrand.aspx" runat="server">Thương hiệu</asp:HyperLink>
+                                <asp:HyperLink ID="hlBrand" Visible="false" NavigateUrl="~/Admin/ManagerBrand/HomeBrand.aspx" runat="server">Thương hiệu</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:HyperLink ID="hlCategories" NavigateUrl="~/Admin/ManagerCategories/HomeCategories.aspx" runat="server">Loại sản phẩm</asp:HyperLink>
+                                <asp:HyperLink ID="hlCategories" Visible="false" NavigateUrl="~/Admin/ManagerCategories/HomeCategories.aspx" runat="server">Loại sản phẩm</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:HyperLink ID="hlBill" NavigateUrl="~/Admin/ManagerBill/HomeBill.aspx" runat="server">Đơn hàng</asp:HyperLink>
+                                <asp:HyperLink ID="hlBill" Visible="false" NavigateUrl="~/Admin/ManagerBill/HomeBill.aspx" runat="server">Đơn hàng</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:HyperLink ID="hlCustomer" NavigateUrl="~/Admin/ManagerCustomer/HomeCustomer.aspx" runat="server">Tài khoản</asp:HyperLink>
+                                <asp:HyperLink ID="hlEmloyee" NavigateUrl="~/Admin/ManagerEmloyee/HomeEmloyee.aspx" runat="server">Tài khoản</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hlCustomer" NavigateUrl="~/Admin/ManagerCustomer/HomeCustomer.aspx" runat="server">Khách Hàng</asp:HyperLink>
                             </li>
                         </ul>
                     </div>
@@ -56,7 +63,7 @@
                     </div>
                 </div>
                 <div class="main-content">
-                    <div style="padding: 50px 0">
+                    <div style="padding: 50px 0; margin-left: 210px;">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>

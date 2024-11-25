@@ -64,22 +64,21 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Manager Brand</h1>
-    <h1>Manager Categories</h1>
+    <h1>Quản lý thương hiệu</h1>
         <asp:TextBox ID="txtSearch" runat="server" placeholder="Nhập thông tin cần tìm..." CssClass="txtSearch"></asp:TextBox>
     <asp:Button ID="btnSearch" runat="server" Text="Tìm Kiếm" OnClick="btnSearch_Click" CssClass="btnSearch" />
-    <asp:Button ID="btnLoad" runat="server" Text="Load" OnClick="btnLoad_Click" CssClass="btnSearch" />
+    <asp:Button ID="btnLoad" runat="server" Text="Tải lại" OnClick="btnLoad_Click" CssClass="btnSearch" />
 
 <%--    <asp:Label ID="Label1" runat="server" Text="Search"></asp:Label>--%>
-    <asp:Button ID="btnAddBrand" CssClass="btnAdd" runat="server" Text="Add Product" OnClick="btnAddBrand_Click" />
-        <asp:Repeater ID="rptBrandsList" runat="server">
+    <asp:Button ID="btnAddBrand" CssClass="btnAdd" runat="server" Text="Thêm" OnClick="btnAddBrand_Click" />
+        <asp:Repeater ID="rptBrandsList" OnItemDataBound="rptBrandsList_ItemDataBound" runat="server">
         <HeaderTemplate>
             <table class="status-table">
                 <thead>
                     <tr>
                         <th width="50px">Mã</th>
-                        <th width="370px">Tên Loại Sản Phẩm</th>
-                        <th width="250px">Trang Thái</th>
+                        <th width="370px">Tên Thương Hiệu</th>
+                        <th width="250px">Trạng Thái</th>
                         <th width="250px">Tổng Số Lượng Sản Phẩm</th>
                         <th width="250px">Chức Năng</th>
                     </tr>
@@ -88,7 +87,7 @@
         </HeaderTemplate>
         <ItemTemplate>
             <tr>
-                <td>
+                <td style="text-align: center">
                     <%# Eval("BrandID") %>
 
                 </td>
@@ -98,10 +97,10 @@
                 <td>
                     <%# LoadStatus(bool.Parse(Eval("Status").ToString())) %>
                 </td>
-                <td>
+                <td style="text-align: center">
                     <%# TotalQuantityProductBrands(int.Parse(Eval("BrandID").ToString())) %>
                 </td>
-                <td>
+                <td style="text-align: center">
                     <asp:Button ID="btnUpdate" runat="server" CssClass="btnEdit" CommandArgument='<%# Eval("BrandID") %>' OnClick="btnUpdate_Click" Text="Sửa" />
                     <asp:Button ID="btnDelete" runat="server" CssClass="btnDelete"  CommandArgument='<%# Eval("BrandID") %>' OnClick="btnDelete_Click" Text="Xóa" />
                 </td>
@@ -117,7 +116,7 @@
     <br />
     <asp:Repeater ID="RepeaterPagination" runat="server">
             <ItemTemplate>
-                <a href="HomeProduct.aspx?categories=<%# Request.QueryString["product"] %>&page=<%# Container.DataItem %>"
+                <a href="HomeBrand.aspx?brand=<%# txtSearch.Text %>&page=<%# Container.DataItem %>"
                     class="pagination-link <%# Request.QueryString["page"] != null && Request.QueryString["page"] == Container.DataItem.ToString() ? "active" : "" %>">
                     <%# Container.DataItem %>
                  </a>

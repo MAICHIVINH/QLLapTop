@@ -15,24 +15,6 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
     {
 
         /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
-        /// btnHomeProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHomeProduct;
-
-        /// <summary>
         /// txtProductName control.
         /// </summary>
         /// <remarks>
@@ -42,6 +24,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         protected global::System.Web.UI.WebControls.TextBox txtProductName;
 
         /// <summary>
+        /// lblPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrice;
+
+        /// <summary>
         /// txtPrice control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
+
+        /// <summary>
+        /// lblFileName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFileName;
 
         /// <summary>
         /// txtNameFile control.
@@ -69,6 +69,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         protected global::System.Web.UI.WebControls.FileUpload FileImage;
 
         /// <summary>
+        /// lblImageDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblImageDetail;
+
+        /// <summary>
         /// FileImagePermistion control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileImagePermistion;
+
+        /// <summary>
+        /// lblDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetail;
 
         /// <summary>
         /// txtDetails control.
@@ -96,6 +114,24 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         protected global::System.Web.UI.WebControls.TextBox txtStockQuantity;
 
         /// <summary>
+        /// lblDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescription;
+
+        /// <summary>
+        /// lblCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategory;
+
+        /// <summary>
         /// ddlCategories control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCategories;
+
+        /// <summary>
+        /// lblBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBrand;
 
         /// <summary>
         /// ddlBrand control.
@@ -114,6 +159,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         protected global::System.Web.UI.WebControls.DropDownList ddlBrand;
 
         /// <summary>
+        /// lblDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDiscount;
+
+        /// <summary>
         /// txtDiscount control.
         /// </summary>
         /// <remarks>
@@ -123,6 +177,15 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         protected global::System.Web.UI.WebControls.TextBox txtDiscount;
 
         /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// btnAddProduct control.
         /// </summary>
         /// <remarks>
@@ -130,5 +193,14 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddProduct;
+
+        /// <summary>
+        /// btnHomeProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHomeProduct;
     }
 }

@@ -81,10 +81,8 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
             // Danh sách lưu các tên ảnh đã tải lên
             List<string> uploadedImages = new List<string>();
 
-            // Kiểm tra xem người dùng đã tải lên các tệp chưa
             if (FileImagePermistion.HasFiles)
             {
-                // Giới hạn số lượng hình ảnh tải lên
                 int maxImages = 4;
                 int uploadedImageCount = 0;
 
@@ -154,6 +152,9 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
                 Discount = discount,
                 CategoryID = idCategories,
                 BrandID = idBrand,
+                Evaluate = 0,
+                TotalRatings = 0,
+                SumRatings = 0
             };
             data.Products.InsertOnSubmit(product);
             data.SubmitChanges();

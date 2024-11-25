@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="new-products">
         <%--  Sản phẩm nhóm mỏng nhẹ--%>
         <asp:Label ID="lblMongNhe" runat="server" CssClass="MongNhe" Text='<%# Eval("CategoryName") %>'></asp:Label>
@@ -54,8 +55,10 @@
         <asp:Button ID="LoadMoreVanPhong" runat="server" Text="Xem thêm" CssClass="load-more-btn" OnClick="LoadMoreVanPhong_Click" />
     </div>
 
+
     <div class="new-products">
         <%--Sản phẩm nhóm Gaming --%>
+
         <asp:Label ID="lblGaming" runat="server" CssClass="MongNhe" Text='<%# Eval("CategoryName") %>'></asp:Label>
         <div class="product-grid">
             <asp:Repeater ID="RepeaterGaming" runat="server">

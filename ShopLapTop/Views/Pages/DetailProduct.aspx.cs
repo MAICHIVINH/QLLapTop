@@ -90,6 +90,8 @@ namespace ShopLapTop.Views.Pages
                                                                                 //    lblGia.Text = "Liên hệ"; // Hiển thị thông báo nếu giá trị Giá là null
                                                                                 //}
                 lblChiTiet.Text = sp.Details.ToString().Replace("\n", "<br />");
+                lblEvaluate.Text = sp.Evaluate.ToString();
+                lblTotalRatings.Text = sp.TotalRatings.ToString();
             }
         }
         // Xử lý thêm vào giỏ hàng

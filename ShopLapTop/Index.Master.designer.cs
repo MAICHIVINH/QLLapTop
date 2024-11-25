@@ -69,22 +69,13 @@ namespace ShopLapTop
         protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// Login1 control.
+        /// hlUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Login1;
-
-        /// <summary>
-        /// Login control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Login;
+        protected global::System.Web.UI.WebControls.HyperLink hlUser;
 
         /// <summary>
         /// lblTaiKhoan control.
@@ -105,22 +96,13 @@ namespace ShopLapTop
         protected global::System.Web.UI.WebControls.Button btnLogOut;
 
         /// <summary>
-        /// HyperLink2 control.
+        /// hlOrderHistories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
-
-        /// <summary>
-        /// car control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image car;
+        protected global::System.Web.UI.WebControls.HyperLink hlOrderHistories;
 
         /// <summary>
         /// HyperLink1 control.
@@ -132,13 +114,13 @@ namespace ShopLapTop
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
-        /// CartImage control.
+        /// HyperLink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image CartImage;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
 
         /// <summary>
         /// RepeaterThuongHieu control.

@@ -15,22 +15,13 @@ namespace ShopLapTop.Admin.ManagerCategories.Function
     {
 
         /// <summary>
-        /// lblMessage control.
+        /// lblCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
-        /// btnHomeCategories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHomeCategories;
+        protected global::System.Web.UI.WebControls.Label lblCategory;
 
         /// <summary>
         /// txtCategoriesName control.
@@ -69,6 +60,15 @@ namespace ShopLapTop.Admin.ManagerCategories.Function
         protected global::System.Web.UI.WebControls.CheckBox chkPresently;
 
         /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// btnUpdateCategories control.
         /// </summary>
         /// <remarks>
@@ -76,5 +76,14 @@ namespace ShopLapTop.Admin.ManagerCategories.Function
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdateCategories;
+
+        /// <summary>
+        /// btnHomeCategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHomeCategories;
     }
 }

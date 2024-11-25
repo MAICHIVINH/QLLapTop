@@ -78,6 +78,15 @@ namespace ShopLapTop.Admin
         protected global::System.Web.UI.WebControls.HyperLink hlBill;
 
         /// <summary>
+        /// hlEmloyee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlEmloyee;
+
+        /// <summary>
         /// hlCustomer control.
         /// </summary>
         /// <remarks>

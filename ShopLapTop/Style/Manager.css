@@ -15,20 +15,22 @@ body {
 
 
 .sidebar {
-   
-    width: 250px;
+    width: 200px;
     background-color: #2c3e50;
     color: #fff;
     padding: 20px;
     height: 100%;
+    position: fixed;
 }
 
     .sidebar h2 {
         font-size: 1.2rem;
         margin-bottom: 20px;
+        color: #ff00dc
     }
 
     .sidebar ul {
+        padding: 0;
         list-style: none;
     }
 
@@ -65,8 +67,8 @@ body {
 .header {
     position: fixed;
     top: 0;
-    left: 250px; /* Căn theo độ rộng của sidebar */
-    width: calc(100% - 250px); /* Chiều rộng trừ đi sidebar */
+    left: 200px; /* Căn theo độ rộng của sidebar */
+    width: calc(100% - 200px); /* Chiều rộng trừ đi sidebar */
     background-color: #fff;
     display: flex;
     justify-content: space-between;

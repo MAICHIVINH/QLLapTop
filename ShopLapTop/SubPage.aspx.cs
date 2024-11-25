@@ -16,8 +16,7 @@ namespace ShopLapTop
             LoadProductGaming();
             LoadProductMacbook();
             LoadProductCaoCap();
-            //LoadMongNhe();
-            //LoadVanPhong();
+
             LoadCategory(1, lblMongNhe);
             LoadCategory(2, lblVanPhong);
             LoadCategory(3, lblGaming);
@@ -25,12 +24,16 @@ namespace ShopLapTop
             LoadCategory(5, lblCaoCap);
 
 
+
+
         }
+
+
 
         private void LoadCategory(int categoryid, Label lblCategory)
         {
             ShopDataContext data = new ShopDataContext();
-            var category = data.ProductCategories.Where(n => n.CategoryID == categoryid).FirstOrDefault();
+            var category = data.ProductCategories.Where(n => n.CategoryID == categoryid && n.Status == true).FirstOrDefault();
             lblCategory.Text = category.CategoryName;
         }
 

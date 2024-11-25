@@ -12,6 +12,8 @@ namespace ShopLapTop.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadProduct();
+            // Kiểm tra chứ năng của quản lý sản phẩm
+           
         }
 
 

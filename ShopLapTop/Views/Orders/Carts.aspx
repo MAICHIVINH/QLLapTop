@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="margin-top: 160px;">
     <h2>Danh sách sản phẩm</h2>
+        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
     <asp:Repeater ID="OrderRepeater" runat="server">
         <HeaderTemplate>
             <table class="product-list">

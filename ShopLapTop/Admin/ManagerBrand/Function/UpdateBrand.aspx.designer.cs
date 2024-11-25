@@ -15,22 +15,13 @@ namespace ShopLapTop.Admin.ManagerBrand.Function
     {
 
         /// <summary>
-        /// lblMessage control.
+        /// lblBrand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
-        /// btnHomeBrand control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHomeBrand;
+        protected global::System.Web.UI.WebControls.Label lblBrand;
 
         /// <summary>
         /// txtBrandName control.
@@ -69,6 +60,15 @@ namespace ShopLapTop.Admin.ManagerBrand.Function
         protected global::System.Web.UI.WebControls.CheckBox chkPresently;
 
         /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// btnUpdateBrand control.
         /// </summary>
         /// <remarks>
@@ -76,5 +76,14 @@ namespace ShopLapTop.Admin.ManagerBrand.Function
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdateBrand;
+
+        /// <summary>
+        /// btnHomeBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHomeBrand;
     }
 }

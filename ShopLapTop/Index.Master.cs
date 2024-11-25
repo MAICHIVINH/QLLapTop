@@ -14,20 +14,14 @@ namespace ShopLapTop
             LoadThuongHieu();
             if (!IsPostBack)
             {
-                if (Request.Cookies["uid"] == null)
-                {
-                    HttpCookie myCookie = new HttpCookie("uid");
-                    Random random = new Random();
-                    myCookie.Value = random.Next(100000).ToString();
-                    myCookie.Expires = DateTime.Now.AddDays(365);
-                    Response.Cookies.Add(myCookie);
-
-                }
+                
             } 
             if (Session["name"] != null) //Kiểm tra xe ngdung đăng nhập hay chưa.Session["name"] != NULLngdung da dăng nhập 
             {
                 lblTaiKhoan.Text = Session["name"].ToString();//Hiển thị tên tk đăng nhập trên lable
                 btnLogOut.Visible = true;
+                hlUser.Visible = false;
+                hlOrderHistories.Visible = true;
             }
 
 
@@ -54,7 +48,7 @@ namespace ShopLapTop
         private void LoadThuongHieu()
         {
             ShopDataContext data = new ShopDataContext();
-            var Json = data.Brands.ToList();
+            var Json = data.Brands.Where(p => p.Status == true).ToList();
 
             RepeaterThuongHieu.DataSource = Json;
             RepeaterThuongHieu.DataBind();

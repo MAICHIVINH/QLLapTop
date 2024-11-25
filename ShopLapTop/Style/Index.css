@@ -6,13 +6,13 @@
 
 body {
     font-family: Arial, sans-serif;
-    padding-top: 150px; /*Thêm khoảng cách phía trên để không bị che khuất bởi .top-bar */
+    padding-top: 150px; 
 }
 
 
 
 .header {
-    position: fixed; /* Đặt header ở vị trí cố định */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -49,7 +49,7 @@ body {
 }
 
 .menulogin-left {
-    width: 40%;
+/*    width: 10%;*/
 }
 
 .btn-logout {
@@ -64,9 +64,9 @@ body {
         background-color: #c82333;
     }
 
-.menucart-right {
+/*.menucart-right {
     width: 10%;
-}
+}*/
 /*.logo-container .logo{
     width: 100%;
 }*/
@@ -133,8 +133,9 @@ body {
         padding: 10px;
         border: 1px solid #ccc;
         font-size: 14px;
-        width: 100px;
+        width: 90px;
         height: 40px;
+
     }
 
 .new-products {
@@ -163,9 +164,9 @@ body {
 .MongNhe {
     display: flex;
     color: #D94A8C;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    height: 70px; /* Điều chỉnh chiều cao theo nhu cầu */
+    justify-content: center; 
+    align-items: center;
+    height: 70px; 
     font-size: 2em;
     font-weight: bold;
 }
@@ -182,7 +183,7 @@ body {
     border: 1px solid #ccc;
     /* text-align: center;*/
     position: relative;
-    /*overflow: hidden;*/ /* Đảm bảo các nút không ra ngoài thẻ sản phẩm */
+    /*overflow: hidden;*/ 
 }
 
     .product-card input[type="image"] {
@@ -191,14 +192,11 @@ body {
         margin-right: auto;
         width: 200px;
         height: 150px;
-        object-fit: contain; /* Giữ tỷ lệ hình ảnh */
-        transition: filter 0.3s ease; /* Hiệu ứng chuyển tiếp cho ảnh */
+        object-fit: contain;
+        transition: filter 0.3s ease; 
         transition: transform 0.3s ease;
     }
 
-/*.product-card input[type="image"]:hover {
-            transform: scale(1.2);*/ /* Phóng to ảnh lên 20% */
-/*}*/
 
 .product-name {
     text-align: center;
@@ -207,11 +205,11 @@ body {
 
     .product-name .product-link {
         position: relative;
-        color: black; /* Màu chữ */
-        text-decoration: none; /* Bỏ gạch chân */
-        text-align: center; /* Căn giữa văn bản */
+        color: black; 
+        text-decoration: none;
+        text-align: center; 
         height: 40px;
-        z-index: 1; /* Đặt z-index cao hơn để hiển thị trên ảnh */
+        z-index: 1; 
     }
 
         .product-name .product-link:hover {
@@ -220,7 +218,7 @@ body {
 
 .product-price {
     position: relative;
-    z-index: 1; /* Đặt z-index cao hơn để hiển thị trên ảnh */
+    z-index: 1;
     color: rgba(217, 74, 140, 0.8);
     text-align: center;
 }
@@ -229,15 +227,13 @@ body {
     position: relative;
     font-family: monospace;
     text-align: justify;
-    line-height: 1.6; /* Điều chỉnh chiều cao dòng để dễ đọc hơn */
-    word-wrap: break-word; /* Đảm bảo không có từ quá dài làm vỡ layout */
-    /*max-height: 120px;*/ /* Giới hạn chiều cao để không chiếm quá nhiều không gian */
+    line-height: 1.6; 
+    word-wrap: break-word; 
     padding: 0 10px;
 }
 
 .product-card:hover input[type="image"] {
-    /*filter: blur(2px);*/ /*Làm mờ ảnh khi di chuột qua */
-    transform: scale(1.1); /* Phóng to ảnh lên 20% */
+    transform: scale(1.1); 
 }
 
 /*.product-card p {
@@ -245,10 +241,6 @@ body {
     color: #333;
     margin-bottom: 5px;
 }*/
-
-
-
-
 
 
 .load-more-btn {
@@ -270,8 +262,7 @@ body {
     /*background-color: #F9E6DD;*/
     padding: 20px;
     text-align: center;
-    position: relative; /* Đặt footer ở vị trí tương đối */
-    /*margin-bottom: 55px;*/
+    position: relative; 
 }
 
 h3 {
@@ -282,7 +273,6 @@ h3 {
     color: #8C4A32;
 }
 
-/* Định dạng chung cho thanh menu */
 .bottom-menu {
     position: fixed;
     bottom: 0;

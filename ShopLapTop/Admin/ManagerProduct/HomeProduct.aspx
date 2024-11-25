@@ -68,8 +68,8 @@
     <asp:TextBox ID="txtSearch" runat="server" placeholder="Nhập thông tin cần tìm..." CssClass="txtSearch"></asp:TextBox>
     <asp:Button ID="btnSearch" runat="server" Text="Tìm Kiếm" OnClick="btnSearch_Click" CssClass="btnSearch" />
 <%--    <asp:Label ID="Label1" runat="server" Text="Search"></asp:Label>--%>
-    <asp:Button ID="Button1" CssClass="btnAdd" runat="server" Text="Add Product" OnClick="btnAddProduct_Click" />
-    <asp:Repeater ID="rptOrderList" runat="server">
+    <asp:Button ID="btnAddProduct" Visible="false" CssClass="btnAdd" runat="server" Text="Thêm" OnClick="btnAddProduct_Click" />
+    <asp:Repeater ID="rptOrderList" OnItemDataBound="rptOrderList_ItemDataBound" runat="server">
         <HeaderTemplate>
             <table class="status-table">
                 <thead>
@@ -89,7 +89,7 @@
         </HeaderTemplate>
         <ItemTemplate>
             <tr>
-                <td>
+                <td style="text-align: center">
                     <%# Eval("ProductID") %>
 
                 </td>
@@ -100,7 +100,7 @@
                     <%# Eval("ProductName") %>
                 </td>
                
-                <td>
+                <td style="text-align: center">
                     <%# Eval("Price") %>
 
                 </td>
@@ -111,17 +111,17 @@
 <%--                <td>
                     <%# Eval("Description") %>
                 </td>--%>
-                 <td>
+                 <td style="text-align: center">
                         <asp:Label ID="lblCategory" runat="server" Text='<%# category(Convert.ToInt32(Eval("CategoryID"))) %>'></asp:Label>
 
                 </td>
-                <td>
+                <td style="text-align: center">
                         <asp:Label ID="lblBrand" runat="server" Text='<%# brand(Convert.ToInt32(Eval("BrandID"))) %>'></asp:Label>
 
                 </td>
-                <td>
-                    <asp:Button ID="btnUpdate" runat="server" CssClass="btnEdit" CommandArgument='<%# Eval("ProductID") %>' OnClick="btnUpdate_Click" Text="Sửa" />
-                    <asp:Button ID="btnDelete" runat="server" CssClass="btnDelete"  CommandArgument='<%# Eval("ProductID") %>' OnClick="btnDelete_Click1" Text="Xóa" />
+                <td style="text-align: center">
+                    <asp:Button ID="btnUpdate" Visible="false" runat="server" CssClass="btnEdit" CommandArgument='<%# Eval("ProductID") %>' OnClick="btnUpdate_Click" Text="Sửa" />
+                    <asp:Button ID="btnDelete" Visible="false" runat="server" CssClass="btnDelete"  CommandArgument='<%# Eval("ProductID") %>' OnClick="btnDelete_Click1" Text="Xóa" />
                 </td>
             </tr>
         </ItemTemplate>
@@ -135,7 +135,7 @@
     <br />
     <asp:Repeater ID="RepeaterPagination" runat="server">
             <ItemTemplate>
-                <a href="HomeProduct.aspx?product=<%# Request.QueryString["product"] %>&page=<%# Container.DataItem %>"
+                <a href="HomeProduct.aspx?product=<%# txtSearch.Text %>&page=<%# Container.DataItem %>"
                     class="pagination-link <%# Request.QueryString["page"] != null && Request.QueryString["page"] == Container.DataItem.ToString() ? "active" : "" %>">
                     <%# Container.DataItem %>
                  </a>

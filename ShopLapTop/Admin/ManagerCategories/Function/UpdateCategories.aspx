@@ -1,22 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../Manager.Master" AutoEventWireup="true" CodeBehind="UpdateCategories.aspx.cs" Inherits="ShopLapTop.Admin.ManagerCategories.Function.UpdateCategories" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../../../Style/UpdateBrand.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Thêm Loại Sản Phẩm</h1>
-    <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
-    <asp:Button ID="btnHomeCategories" runat="server" Text="Tro lai trang chu" OnClick="btnHomeCategories_Click" />
-
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Categories Name </span>
-        <asp:TextBox ID="txtCategoriesName" CssClass="form-control" runat="server"></asp:TextBox>
+    <div class="wapper">
+        <div class="container">
+            <h1>Cập Nhật Loại Sản Phẩm</h1>
+            <div class="form-group">
+                <asp:Label ID="lblCategory" runat="server" Text="Tên nhóm sản phẩm:" class="label"> </asp:Label>
+                <asp:TextBox ID="txtCategoriesName" CssClass="form-control" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblStatus" runat="server" class="label" Text="Trạng Thái Dữ Liệu"></asp:Label><br />
+                <asp:CheckBox ID="chkHidden" runat="server" CssClass="input" AutoPostBack="true" Style="display: flex; gap: 20px;" Text="Ẩn Dữ Liệu" OnCheckedChanged="chkHidden_CheckedChanged" /><br />
+                <br />
+                <asp:CheckBox ID="chkPresently" runat="server" CssClass="input" AutoPostBack="true" Style="display: flex; gap: 20px;" Text="Hiển Thị Dữ Liệu" OnCheckedChanged="chkPresently_CheckedChanged" />
+            </div>
+            <br />
+            <div>
+                <asp:Label ID="lblMessage" CssClass="lbl-Error" runat="server" Text=""></asp:Label>
+            </div>
+            <br />
+            <div>
+                <asp:Button ID="btnUpdateCategories" runat="server" CssClass="btn-update" Text="Cập nhật" OnClick="btnUpdateCategories_Click" />
+                <asp:Button ID="btnHomeCategories" runat="server" CssClass="btn-cancel" Text="Quay về" OnClick="btnHomeCategories_Click" />
+            </div>
+        </div>
     </div>
-    <div class="input-group">
-        <asp:Label ID="lblStatus" runat="server" Text="Trạng Thái Dữ Liệu"></asp:Label><br />
-        <asp:CheckBox ID="chkHidden" runat="server" CssClass="input-field" AutoPostBack="true" Text="Ẩn Dữ Liệu" OnCheckedChanged="chkHidden_CheckedChanged" /><br />
-        <asp:CheckBox ID="chkPresently" runat="server" CssClass="input-field" AutoPostBack="true" Text="Hiển Thị Dữ Liệu" OnCheckedChanged="chkPresently_CheckedChanged" />
-    </div>
-
-    <asp:Button ID="btnUpdateCategories" runat="server" Text="Thêm " OnClick="btnUpdateCategories_Click" />
-
 </asp:Content>

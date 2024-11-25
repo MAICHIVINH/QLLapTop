@@ -44,11 +44,13 @@
                     <asp:Button ID="btnAddToCart" runat="server" Text="ADD TO CART" CssClass="addcart" OnClick="btnAddToCart_Click" />
                 </div>
                 <div class="share">
-                    <label>Share on:</label>
-                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
+                    <asp:Label ID="lbl1" runat="server" style="font-size: 14px" Text="Đánh giá:"></asp:Label>
+                    <asp:Label ID="lblEvaluate" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lbl" runat="server" Text="⭐"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblTotalRating" runat="server" style="font-size: 14px" Text="Số lượt người đánh giá: "></asp:Label>                
+                    <asp:Label ID="lblTotalRatings" runat="server" Text=""></asp:Label>
                 </div>
             </div>
         </div>

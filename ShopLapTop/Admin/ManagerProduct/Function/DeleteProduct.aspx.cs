@@ -76,7 +76,7 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
         {
             int id = int.Parse(Request.QueryString["id"]);
             var product = data.Products.SingleOrDefault(p => p.ProductID == id);
-            var order_history = data.OrderHistories.Where(p => p.ProductID == id).ToList();
+            var order_history = data.OrderHistoriyProducts.Where(p => p.ProductID == id).ToList();
             var order_detail = data.OrderDetails.Where(p => p.ProductID == id).ToList();
             var Image = data.Images.Where(p => p.ProductID == id).ToList();
             // duyệt tất cả dữ liệu ở các bảng đã kết nối khóa ngoại với product 
@@ -96,7 +96,7 @@ namespace ShopLapTop.Admin.ManagerProduct.Function
             {
                 foreach (var item in order_history)
                 {
-                    data.OrderHistories.DeleteOnSubmit(item);
+                    data.OrderHistoriyProducts.DeleteOnSubmit(item);
                 }
             }
             data.Products.DeleteOnSubmit(product);

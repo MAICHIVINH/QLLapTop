@@ -81,8 +81,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Manager2.aspx" />
     <Content Include="Admin\ManagerBill\HomeBill.aspx" />
+    <Content Include="Admin\ManagerBill\Function\UpdateStatusOrder.aspx" />
     <Content Include="Admin\ManagerBrand\Function\AddBrand.aspx" />
     <Content Include="Admin\ManagerBrand\Function\DeleteBrand.aspx" />
     <Content Include="Admin\ManagerBrand\Function\UpdateBrand.aspx" />
@@ -91,7 +93,10 @@
     <Content Include="Admin\ManagerCategories\Function\DeleteCategories.aspx" />
     <Content Include="Admin\ManagerCategories\Function\UpdateCategories.aspx" />
     <Content Include="Admin\ManagerCategories\HomeCategories.aspx" />
+    <Content Include="Admin\ManagerCustomer\Function\UpdateStatusCustomer.aspx" />
     <Content Include="Admin\ManagerCustomer\HomeCustomer.aspx" />
+    <Content Include="Admin\ManagerEmloyee\Function\AddEmloyee.aspx" />
+    <Content Include="Admin\ManagerEmloyee\HomeEmloyee.aspx" />
     <Content Include="Admin\ManagerProduct\Function\AddProduct.aspx" />
     <Content Include="Admin\ManagerProduct\Function\DeleteProduct.aspx" />
     <Content Include="Admin\ManagerProduct\Function\UpdateProduct.aspx" />
@@ -99,45 +104,27 @@
     <Content Include="Global.asax" />
     <Content Include="Login\Logins.aspx" />
     <Content Include="Login\Register.aspx" />
+    <Content Include="Style\AddBrand.css" />
+    <Content Include="Style\AddEmloyee.css" />
+    <Content Include="Style\AddProduct.css" />
     <Content Include="Style\Cart.css" />
+    <Content Include="Style\DeleteBrand.css" />
     <Content Include="Style\DetailProduct.css" />
     <Content Include="Style\Images\Acer Aspire 3 A315 58 529V i5.jpg" />
-    <Content Include="Style\Images\Acer Aspire 7 Gaming A715 42G R4XX.jpg" />
     <Content Include="Style\Images\Acer Gaming Predator Helios Neo 14 PHN14-51-99Y8.png" />
-    <Content Include="Style\Images\Acer Nitro 5 AN515 45 R9SC.jpg" />
-    <Content Include="Style\Images\Acer Nitro 5 Gaming AN515 57 54MV.jpg" />
-    <Content Include="Style\Images\Acer Nitro 5 Gaming AN515 57 5831.jpg" />
     <Content Include="Style\Images\acer-swift-3-sf314-511-55qe-i5.jpg" />
     <Content Include="Style\Images\Apple MacBook Pro 16 inch M3 Max.jpg" />
-    <Content Include="Style\Images\asus g513 r7.jpg" />
-    <Content Include="Style\Images\Asus TUF Gaming FX517ZC i5.jpg" />
-    <Content Include="Style\Images\Asus VivoBook A415EA i3.jpg" />
-    <Content Include="Style\Images\Asus VivoBook Pro 16X OLED M7600 QC.jpg" />
-    <Content Include="Style\Images\call-icon-1.png" />
-    <Content Include="Style\Images\caocap1.jpg" />
-    <Content Include="Style\Images\caocap2.jpg" />
-    <Content Include="Style\Images\caocap3.jpg" />
-    <Content Include="Style\Images\caocap4.jpg" />
+    <Content Include="Style\Images\background-login.jpg" />
     <Content Include="Style\Images\carshopping.png" />
     <Content Include="Style\Images\Dell Latitude 3440 i5-1235U.jpg" />
     <Content Include="Style\Images\Dell XPS 13 9310.jpg" />
     <Content Include="Style\Images\Dell XPS 14 9440 U7.jpg" />
-    <Content Include="Style\Images\gaming2.jpg" />
-    <Content Include="Style\Images\gaming3.jpg" />
-    <Content Include="Style\Images\gaming4.jpg" />
-    <Content Include="Style\Images\home-icon-1.png" />
     <Content Include="Style\Images\Hp 15s du1108TU.jpg" />
     <Content Include="Style\Images\Hp 15s Sdu1108TU.jpg" />
-    <Content Include="Style\Images\HP ZBook Firefly 14 G8.jpg" />
     <Content Include="Style\Images\Laptop Acer Aspire 3 A314 35 P6NC N6000.jpg" />
     <Content Include="Style\Images\Laptop Acer Aspire 3 A315 58 59LY.jpg" />
-    <Content Include="Style\Images\Laptop Acer Aspire 7 Gaming A715 75G 58U4.jpg" />
-    <Content Include="Style\Images\Laptop Acer Aspire A514 54 511G.jpg" />
-    <Content Include="Style\Images\Laptop Acer Aspire A514 54 5127.jpg" />
     <Content Include="Style\Images\Laptop Acer Aspire Lite AL16-51P-55N7 i5 1235U.png" />
-    <Content Include="Style\Images\Laptop Acer Swift 3 SF314 511 55QE.jpg" />
     <Content Include="Style\Images\Laptop Acer Swift Go AI SFG14.jpg" />
-    <Content Include="Style\Images\Laptop Acer Swift X SFX16 51G 516Q.jpg" />
     <Content Include="Style\Images\Laptop Acer TravelMate TMP215 53 50CP.jpg" />
     <Content Include="Style\Images\Laptop Asus Vivobook X1404ZA-NK387W i3.jpg" />
     <Content Include="Style\Images\Laptop Dell Inspiron N3520 i5.jpg" />
@@ -146,46 +133,36 @@
     <Content Include="Style\Images\Laptop HP ProBook 440 G10 i7-1360P.png" />
     <Content Include="Style\Images\Laptop Lenovo Gaming Legion 9 16IRX8 i9 13980HX.png" />
     <Content Include="Style\Images\Laptop Lenovo IdeaPad Slim 5 14Q8X9 X1P-42-100.png" />
-    <Content Include="Style\Images\Lenovo Ideapad 5 15ITL05.jpg" />
     <Content Include="Style\Images\Lenovo Ideapad Slim 3 15IAH8 i5 12450H.jpg" />
-    <Content Include="Style\Images\Lenovo ThinkBook 14p G2 ACH.jpg" />
-    <Content Include="Style\Images\Lenovo ThinkBook 14p.jpg" />
-    <Content Include="Style\Images\lenovo-yoga-9-14itl5-i7.jpg" />
     <Content Include="Style\Images\Login.png" />
     <Content Include="Style\Images\Logo.png" />
     <Content Include="Style\Images\MacBook Air 13 inch M1 2020.jpg" />
     <Content Include="Style\Images\MacBook Air 15 inch M2 2023.jpg" />
     <Content Include="Style\Images\Macbook Air M3 15 2024.jpg" />
-    <Content Include="Style\Images\macbook air.jpg" />
     <Content Include="Style\Images\MacBook Pro 16 inch M2 Max 2023.jpg" />
-    <Content Include="Style\Images\macbook pro.jpg" />
-    <Content Include="Style\Images\macbook-pro-m1-2020.jpg" />
-    <Content Include="Style\Images\mess-icon-1.png" />
-    <Content Include="Style\Images\mongnhe1.jpg" />
-    <Content Include="Style\Images\mongnhe2.jpg" />
-    <Content Include="Style\Images\mongnhe3.jpg" />
-    <Content Include="Style\Images\mongnhe4.jpg" />
     <Content Include="Style\Images\MSI Gaming Vector GP78HX 13VI-476VN i9-13980HX.jpg" />
     <Content Include="Style\Images\MSI Modern 15 B12MO i5.jpg" />
     <Content Include="Style\Images\msi-creator-z16p.jpg" />
     <Content Include="Style\Images\png-clipart-shopping-cart-shopping-centre-icon-shopping-cart-text-retail-thumbnail.png" />
     <Content Include="Style\Images\pngegg.png" />
+    <Content Include="Style\Images\resignter.png" />
     <Content Include="Style\Images\User.png" />
-    <Content Include="Style\Images\User_2d32dc99-2389-4175-8078-b185362e95c6.png" />
-    <Content Include="Style\Images\vanphong1.jpg" />
-    <Content Include="Style\Images\vanphong2.jpg" />
     <Content Include="Style\Images\vanphong3.jpg" />
-    <Content Include="Style\Images\vill.jpg" />
-    <Content Include="Style\Images\villl.png" />
-    <Content Include="Style\Images\zalo-icon-1.png" />
     <Content Include="Style\Images\ảnh công nghệ số.png" />
     <Content Include="Style\Index.css" />
+    <Content Include="Style\LoginAdmin.css" />
     <Content Include="Style\Logins.css" />
     <Content Include="Style\Manager.css" />
+    <Content Include="Style\OrderStatus.css" />
     <Content Include="Style\Register.css" />
     <Content Include="Style\Search.css" />
+    <Content Include="Style\UpdateBrand.css" />
+    <Content Include="Style\UpdateStatusCustomer.css" />
+    <Content Include="Style\UpdateStatusOrder.css" />
     <Content Include="SubPage.aspx" />
     <Content Include="Views\Orders\Carts.aspx" />
+    <Content Include="Views\Orders\EvaluateProduct.aspx" />
+    <Content Include="Views\Orders\OrderHistory.aspx" />
     <Content Include="Views\Orders\OrderStatus.aspx" />
     <Content Include="Views\Pages\DetailProduct.aspx" />
     <Content Include="Views\Pages\ProductCategory.aspx" />
@@ -194,6 +171,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Manager.Master.cs">
       <DependentUpon>Manager.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +198,13 @@
     </Compile>
     <Compile Include="Admin\ManagerBill\HomeBill.aspx.designer.cs">
       <DependentUpon>HomeBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManagerBill\Function\UpdateStatusOrder.aspx.cs">
+      <DependentUpon>UpdateStatusOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManagerBill\Function\UpdateStatusOrder.aspx.designer.cs">
+      <DependentUpon>UpdateStatusOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManagerBrand\Function\AddBrand.aspx.cs">
       <DependentUpon>AddBrand.aspx</DependentUpon>
@@ -271,12 +262,33 @@
     <Compile Include="Admin\ManagerCategories\HomeCategories.aspx.designer.cs">
       <DependentUpon>HomeCategories.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ManagerCustomer\Function\UpdateStatusCustomer.aspx.cs">
+      <DependentUpon>UpdateStatusCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManagerCustomer\Function\UpdateStatusCustomer.aspx.designer.cs">
+      <DependentUpon>UpdateStatusCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ManagerCustomer\HomeCustomer.aspx.cs">
       <DependentUpon>HomeCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\ManagerCustomer\HomeCustomer.aspx.designer.cs">
       <DependentUpon>HomeCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManagerEmloyee\Function\AddEmloyee.aspx.cs">
+      <DependentUpon>AddEmloyee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManagerEmloyee\Function\AddEmloyee.aspx.designer.cs">
+      <DependentUpon>AddEmloyee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManagerEmloyee\HomeEmloyee.aspx.cs">
+      <DependentUpon>HomeEmloyee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManagerEmloyee\HomeEmloyee.aspx.designer.cs">
+      <DependentUpon>HomeEmloyee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManagerProduct\Function\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
@@ -350,6 +362,20 @@
     <Compile Include="Views\Orders\Carts.aspx.designer.cs">
       <DependentUpon>Carts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Orders\EvaluateProduct.aspx.cs">
+      <DependentUpon>EvaluateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Orders\EvaluateProduct.aspx.designer.cs">
+      <DependentUpon>EvaluateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Orders\OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Orders\OrderStatus.aspx.cs">
       <DependentUpon>OrderStatus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -390,7 +416,6 @@
     <Content Include="Index.Master" />
     <Content Include="Admin\Manager.Master" />
     <None Include="packages.config" />
-    <Content Include="Style\Images\ASUS ROG Zephyrus G16 GA605WI 2024" />
     <Content Include="Shop.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Shop.designer.cs</LastGenOutput>
